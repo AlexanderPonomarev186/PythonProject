@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% block title %}index page{% endblock %}
+{% block content %}
+    <div class="main">
+        <h1>Hello world</h1>
+        <a href="/admin">go to admin page</a>
+        <p>для логина в админку используем реквизиты, которые указали при выполнении команды </p>
+        <p>python.exe manage.py createsuperuser</p>
+        <p>из файла README.md</p>
+        <hr />
+        <a href="/test">go to test page</a>
+    </div>
+<ul>
+        {% for car in cars %}
+            <li>#{{ car.pk }} наименование: <b>{{ car.name }}</b> | год: <b>{{ car.year }}</b> | цена: <b>{{ car.cost }}</b></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
