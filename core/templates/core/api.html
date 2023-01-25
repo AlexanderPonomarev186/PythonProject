@@ -1,0 +1,19 @@
+{% extends "core/base.html" %}
+{% block title %}api page{% endblock %}
+{% block content %}
+    <h1 style="text-align:center">Вакансии</h1>
+    <div>
+        <ul class="ul-api">
+            {% for vacancy in vacancies %}
+            <li class="li-api">
+                <div class="div-api">
+                    <p>{{vacancy.name}}</p>
+                    <a class="btn btn-primary" href="{{vacancy.url}}" role="button">Перейти</a>
+                    <p>{{vacancy.published_at}}</p>
+                    <p>{{vacancy.description}}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

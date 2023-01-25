@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+{% block title %}api page{% endblock %}
+{% block content %}
+<h1 style="text-align:center">Вакансии</h1>
+<div class="main-api">
+    <ul class="ul-api">
+        {% for image in images %}
+        <li class="li-api">
+            <div class="div-api">
+                <img src="{{image.image.url}}"/>
+                <p>{{image.name}}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
